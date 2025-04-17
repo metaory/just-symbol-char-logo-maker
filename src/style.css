@@ -100,20 +100,31 @@
   --cz7: #7766DD;
   /* DO NOT REMOVE ABOVE COLORS */
 
-  --bg: var(--sk2);
-  --fg: #ffffff;
-  --accent: #646cff;
-  --radius: 24px;
-  --padding: 1rem;
+  --bg: #220033;
+  --bg1: #220033DD;
+  --bg2: #220033BB;
+  --bg3: #22003399;
+  --bg4: #22003366;
+  --fg: var(--cy7);
+  --accent: var(--cx4);
+  --bg-alt: var(--sk2);
+  --bg-alt1: var(--cz5);
+
+  --radius-xl: 16px;
+  --radius-lg: 12px;
+  --radius-md: 9px;
+  --radius-sm: 6px;
+  --radius-xs: 3px;
+  --padding: 0.5rem;
   --control-bg: rgba(255, 255, 255, 0.1);
-  --gap: 1rem;
-  --input-height: 2rem;
+  --gap: 0.5rem;
+  --input-height: 1.5rem;
   --stroke-width: 2px;
   --opacity-hover: 0.8;
   --opacity-disabled: 0.5;
-  --font-size: 1rem;
-  --font-size-sm: 0.9rem;
-  --font-size-lg: 1.2rem;
+  --font-size: 0.9rem;
+  --font-size-sm: 0.8rem;
+  --font-size-lg: 1rem;
   --transition: 0.2s ease;
 }
 
@@ -130,6 +141,11 @@
   color: inherit;
 }
 
+html {
+  color-scheme: only dark;
+  background: var(--bg2);
+}
+
 body {
   background: var(--bg);
   color: var(--fg);
@@ -137,130 +153,179 @@ body {
   min-height: 100vh;
   max-height: 100vh;
   overflow: hidden;
-  display: grid;
-  place-items: center;
   padding: var(--padding);
+}
+
+canvas {
+  filter: blur(10px) opacity(0.5);
 }
 
 /* Layout */
-.grid { display: grid; gap: var(--gap) }
-.flex { display: flex; gap: var(--gap) }
-.center { display: grid; place-items: center }
+.grid {
+  display: grid;
+  gap: var(--gap)
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap)
+}
+
+.center {
+  display: grid;
+  place-items: center
+}
 
 /* App */
-#app {
-  max-width: 100vw;
-  max-height: 100vh;
-  aspect-ratio: 16/9;
-  grid-template-columns: 1fr 300px;
-}
-
-/* Preview */
-.preview {
-  aspect-ratio: 1;
-  border-radius: var(--radius);
-  padding: var(--padding);
-  position: relative;
-  overflow: hidden;
-}
-
-.bg {
-  width: 100%;
-  height: 100%;
-  padding: calc(var(--padding) * 2);
-  position: relative;
+main {
+  width: 100vw;
+  height: 100vh;
   display: grid;
-  place-items: center;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--gap);
   overflow: hidden;
-  transition: border-radius var(--transition);
+  max-height: 100vh;
 }
 
-.svg-preview {
-  position: absolute;
-  inset: 0;
+.logo-container {
+  display: grid;
+  place-content: space-around;
+  /* grid-template-rows: 2fr 1fr; */
+  gap: var(--gap);
+  /* overflow-y: auto; */
+  /* max-height: 96vh; */
+}
+
+.controls-container {
+  display: grid;
+  gap: var(--gap);
+  overflow-y: auto;
+  max-height: 96vh;
+  padding-right: 0.25rem;
+}
+
+svg {
+  background: var(--bg);
+  /* background-image: radial-gradient(#552266 2px, transparent 1px);
+  background-size: 30px 30px; */
+
+  background-image:
+    linear-gradient(45deg, var(--bg-alt) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--bg-alt) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--bg-alt) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--bg-alt) 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+
+  width: 50vw;
+  /* width: 100%; */
+  /* max-width: 600px; */
+  aspect-ratio: 1/1;
+  border-radius: var(--radius-md);
   margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
+  display: block;
+  box-shadow: 0 0 2em rgba(0, 0, 0, 0.3);
 }
 
-
-.svg-preview svg {
-  position: absolute;
-  margin: auto;
-  inset: 0;
-  width: auto;
-  height: auto;
-  max-width: 80%;
-  max-height: 80%;
-  aspect-ratio: 1;
-  object-fit: contain;
+fieldset {
+  border: 2px solid var(--cy4);
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  background: var(--bg1);
 }
 
-.placeholder {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: var(--opacity-disabled);
-  font-size: var(--font-size-lg);
-  pointer-events: none;
+legend {
+  padding: 0 0.5rem;
+  font-weight: bold;
+  color: var(--cy4);
 }
 
-/* Controls */
-.controls {
-  background: var(--control-bg);
-  border-radius: var(--radius);
-  padding: var(--padding);
-  grid-template-rows: auto 1fr auto;
-  overflow: hidden;
+label {
+  display: block;
+  margin: 0.25rem 0;
+  font-size: var(--font-size);
+  position: relative;
 }
 
-.control-group {
-  grid-template-rows: auto auto auto;
-  gap: 0.5rem;
+input[type="color"],
+input[type="range"],
+input[type="text"] {
+  width: 100%;
+  margin-top: 0.25rem;
 }
-
-/* Inputs */
-input[type="file"] { display: none }
 
 input[type="color"] {
-  width: 100%;
-  height: var(--input-height);
-  border-radius: var(--radius);
-  cursor: pointer;
-  padding: 0;
-  outline: var(--stroke-width) solid var(--control-bg);
+  height: 2rem;
+  border: 2px solid var(--cy4);
+  border-radius: var(--radius-md);
+  overflow: hidden;
 }
 
-/* Buttons */
-button {
-  background: var(--accent);
+input[type="range"] {
+  height: 1rem;
+  border-radius: var(--radius-md);
+  position: relative;
+}
+
+input[type="range"]::after {
+  content: attr(value);
+  position: absolute;
+  right: 0;
+  top: -1.5rem;
+  font-size: var(--font-size-sm);
   color: var(--fg);
-  padding: 0.5rem 1rem;
-  border-radius: var(--radius);
+  opacity: 0.8;
+}
+
+input[type="text"] {
+  border: 2px solid var(--cy4);
+  border-radius: var(--radius-md);
+  padding: 0.5rem;
+  background: var(--control-bg);
+  height: var(--input-height);
+}
+
+textarea {
+  width: 100%;
+  height: 5rem;
+  font-family: monospace;
+  border: 2px solid var(--cy4);
+  border-radius: var(--radius-md);
+  padding: 0.5rem;
+  background: var(--control-bg);
+  margin-top: 0.25rem;
+  resize: none;
+}
+
+button {
+  width: 100%;
+  padding: 0.5rem;
+  background: var(--cy4);
+  color: var(--bg);
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: bold;
   cursor: pointer;
-  font-size: var(--font-size);
+  margin-top: 0.5rem;
   transition: opacity var(--transition);
-  white-space: nowrap;
-  outline: var(--stroke-width) solid var(--control-bg);
 }
 
-button:hover { opacity: var(--opacity-hover) }
-
-/* Utility Classes */
-.placeholder {
-  opacity: 0.5;
-  font-size: 1.2rem;
+button:hover {
+  opacity: var(--opacity-hover);
 }
 
-/* SVG */
-svg {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
+.color-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+}
+
+.export-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+}
+
+.export-buttons button {
+  margin-top: 0;
 }

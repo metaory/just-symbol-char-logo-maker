@@ -1,10 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 100 100">
+  <style>
+    /* svg { background-color: yellow; } */
+  </style>
   <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#FF3E9D"/>
-      <stop offset="100%" style="stop-color:#0E62FF"/>
-    </linearGradient>
+    <radialGradient id="my-radial-gradient" r="0.75" cx="0.5" cy="0.5">
+      <stop offset="0" stop-color="#4411bb" />
+      <stop offset="0.8" stop-color="#000000" />
+    </radialGradient>
   </defs>
-  <path d="M20,20 L80,20 L80,80 L20,80 Z" fill="none" stroke="url(#grad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M35,35 L65,65 M65,35 L35,65" stroke="url(#grad)" stroke-width="8" stroke-linecap="round"/>
+  <rect
+    width="90"
+    height="90"
+    fill="url(#my-radial-gradient)"
+    x="5"
+    y="5"
+    rx="10"
+    ry="10"
+    fill-opacity="0"
+     />
+  <g transform="translate(-4, -4) scale(4.5)">
+    <path
+      class="logo"
+      fill="#dd1166"
+      fill-rule="evenodd"
+      d="M12 4c-.541 0-1.034.293-2.02.88L7.02 6.637c-.985.586-1.479.88-1.75 1.362S5 9.069 5 10.241v3.518c0 1.172 0 1.758.27 2.241c.271.483.765.776 1.75 1.362l2.96 1.759c.986.586 1.479.879 2.02.879s1.034-.293 2.02-.88l2.96-1.758c.985-.586 1.479-.88 1.75-1.362s.27-1.069.27-2.241V10.24c0-1.17 0-1.757-.27-2.24c-.271-.483-.765-.776-1.75-1.362l-2.96-1.759C13.036 4.293 12.542 4 12 4m4.384 11.144a.75.75 0 0 0-.768-1.288l-4 2.384a.75.75 0 0 0 .768 1.288z"
+      clip-rule="evenodd" />
+    <path
+      fill="#ff4488"
+      d="M18.971 8.92c-.032-.382-.099-.665-.242-.92a1.8 1.8 0 0 0-.384-.464l3.24-2.16a.75.75 0 1 1 .831 1.248zM5.029 15.08c.032.382.099.665.242.92c.096.172.22.32.385.464l-3.24 2.16a.75.75 0 1 1-.832-1.248zm.627-7.544A1.8 1.8 0 0 0 5.27 8c-.143.255-.21.538-.242.92L1.584 6.624a.75.75 0 0 1 .832-1.248z"
+      opacity="0.5" />
+  </g>
 </svg>

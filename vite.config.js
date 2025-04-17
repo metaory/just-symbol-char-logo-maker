@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/just-symbol-char-logo-maker/',
+  base: '/symbol-logo-maker/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',

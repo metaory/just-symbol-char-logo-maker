@@ -1,13 +1,14 @@
 {
-  "name": "just-symbol-char-logo-maker",
+  "name": "symbol-logo-maker",
   "private": true,
   "version": "0.0.1",
   "type": "module",
+  "homepage": "https://metaory.github.io/symbol-logo-maker/",
+  "bugs": "https://github.com/metaory/symbol-logo-maker/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/metaory/just-symbol-char-logo-maker.git"
+    "url": "git+https://github.com/metaory/symbol-logo-maker.git"
   },
-  "homepage": "https://metaory.github.io/just-symbol-char-logo-maker/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
