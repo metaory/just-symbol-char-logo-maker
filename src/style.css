@@ -100,14 +100,15 @@
   --cz7: #7766DD;
   /* DO NOT REMOVE ABOVE COLORS */
 
-  --bg: #220033;
-  --bg1: #220033DD;
-  --bg2: #220033BB;
-  --bg3: #22003399;
-  --bg4: #22003366;
+  --bg: #220044;
+  --bg1: #220044DD;
+  --bg2: #220044BB;
+  --bg3: #22004499;
+  --bg4: #22004466;
+  --bg5: #22004433;
   --fg: var(--cy7);
   --accent: var(--cx4);
-  --bg-alt: var(--sk2);
+  --bg-alt: var(--wk2);
   --bg-alt1: var(--cz5);
 
   --radius-xl: 16px;
@@ -143,11 +144,12 @@
 
 html {
   color-scheme: only dark;
-  background: var(--bg2);
+  background-color: black;
 }
 
 body {
-  background: var(--bg);
+  background: var(--bg3);
+  /* backdrop-filter: blur(10px); */
   color: var(--fg);
   font-family: system-ui, sans-serif;
   min-height: 100vh;
@@ -178,7 +180,7 @@ canvas {
 
 /* App */
 main {
-  width: 100vw;
+  width: 98vw;
   height: 100vh;
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -205,7 +207,7 @@ main {
 }
 
 svg {
-  background: var(--bg);
+  background: var(--bg4);
   /* background-image: radial-gradient(#552266 2px, transparent 1px);
   background-size: 30px 30px; */
 
@@ -228,16 +230,32 @@ svg {
 }
 
 fieldset {
-  border: 2px solid var(--cy4);
+  border: 2px solid var(--accent);
   padding: 0.75rem;
   border-radius: var(--radius-md);
-  background: var(--bg1);
+  background: var(--bg5);
+  backdrop-filter: blur(10px);
+}
+a {
+  color: var(--accent);
+  &:hover {
+    text-decoration: underline;
+  }
+  &:active {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+}
+.icon-source {
+  place-content: normal;
+  place-items: center;
+  display: grid;
 }
 
 legend {
   padding: 0 0.5rem;
   font-weight: bold;
-  color: var(--cy4);
+  color: var(--accent);
 }
 
 label {
@@ -256,7 +274,8 @@ input[type="text"] {
 
 input[type="color"] {
   height: 2rem;
-  border: 2px solid var(--cy4);
+  border: none;
+  background: var(--accent);
   border-radius: var(--radius-md);
   overflow: hidden;
 }
@@ -278,7 +297,7 @@ input[type="range"]::after {
 }
 
 input[type="text"] {
-  border: 2px solid var(--cy4);
+  border: 2px solid var(--accent);
   border-radius: var(--radius-md);
   padding: 0.5rem;
   background: var(--control-bg);
@@ -289,10 +308,10 @@ textarea {
   width: 100%;
   height: 5rem;
   font-family: monospace;
-  border: 2px solid var(--cy4);
+  border: 2px solid var(--accent);
   border-radius: var(--radius-md);
   padding: 0.5rem;
-  background: var(--control-bg);
+  background: var(--wk2);
   margin-top: 0.25rem;
   resize: none;
 }
@@ -300,7 +319,7 @@ textarea {
 button {
   width: 100%;
   padding: 0.5rem;
-  background: var(--cy4);
+  background: var(--accent);
   color: var(--bg);
   border: none;
   border-radius: var(--radius-md);

@@ -4,7 +4,9 @@
   "version": "0.0.1",
   "type": "module",
   "homepage": "https://metaory.github.io/symbol-logo-maker/",
-  "bugs": "https://github.com/metaory/symbol-logo-maker/issues",
+  "bugs": {
+    "url": "https://github.com/metaory/symbol-logo-maker/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/metaory/symbol-logo-maker.git"
@@ -19,5 +21,9 @@
   },
   "devDependencies": {
     "vite": "6.*"
-  }
+  },
+  "description": "A minimalist tool that transforms any symbol, unicode glyph or SVG into a professional logo with custom colors and background.",
+  "keywords": [],
+  "author": "metaory",
+  "license": "MIT"
 }
