@@ -1,6 +1,10 @@
-export default {
+import { defineConfig } from 'vite'
+
+export default defineConfig({
   base: '/just-symbol-char-logo-maker/',
   build: {
-    target: 'esnext',
-  },
-}
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true
+  }
+})
