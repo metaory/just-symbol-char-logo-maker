@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Just Symbol Char Logo Maker</title>
+  </head>
+  <body>
+    <div id="app" class="grid">
+      <div class="preview center">
+        <div class="bg center">
+          <div class="placeholder">Drop SVG here</div>
+        </div>
+      </div>
+      <div class="controls grid">
+        <div class="upload flex">
+          <input type="file" accept=".svg" id="file-input">
+          <button id="upload-btn">Upload SVG</button>
+          <button id="paste-btn">Paste SVG</button>
+          <button id="reset-btn" title="Reset to original">Reset</button>
+        </div>
+        <div class="control-groups grid">
+          <control-group>
+            <span slot="label">Background</span>
+            <input type="color" id="bg-color" title="Background color">
+            <range-control id="bg-radius" min="0" max="100" step="1" value="50" title="Background radius"></range-control>
+          </control-group>
+          <control-group>
+            <span slot="label">Icon</span>
+            <input type="color" id="icon-color" title="Icon color">
+            <range-control id="icon-size" min="8" max="512" step="1" value="512" title="Icon size"></range-control>
+          </control-group>
+          <control-group>
+            <span slot="label">Stroke</span>
+            <input type="color" id="stroke-color" title="Stroke color">
+            <range-control id="stroke-width" min="0" max="5" step="0.1" value="2.3" title="Stroke width"></range-control>
+          </control-group>
+        </div>
+        <div class="export flex">
+          <button id="export-svg" title="Export as SVG">Export SVG</button>
+          <button id="export-png" title="Export as PNG">Export PNG</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

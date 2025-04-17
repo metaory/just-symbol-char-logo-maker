@@ -1,0 +1,266 @@
+:root {
+  /* DO NOT REMOVE BELLOW COLORS */
+  --sbg: #DD1166;
+  --sfg: #330066;
+  --sk0: #1A002A;
+  --sk1: #220033;
+  --sk2: #331144;
+  --sk3: #441A55;
+  --sk4: #552266;
+  --sk5: #662A77;
+  --sk6: #773388;
+  --sk7: #884499;
+  --sk8: #AA55BB;
+  --sk9: #BB66CC;
+  --wbg: #4411BB;
+  --wfg: #44DDFF;
+  --wk0: #110022;
+  --wk1: #220044;
+  --wk2: #331166;
+  --wk3: #441A88;
+  --wk4: #5522AA;
+  --wk5: #6633BB;
+  --wk6: #7744CC;
+  --wk7: #8855DD;
+  --wk8: #9955EE;
+  --wk9: #AA55FF;
+  --ebg: #229911;
+  --efg: #002211;
+  --ek0: #003322;
+  --ek1: #114433;
+  --ek2: #226644;
+  --ek3: #339955;
+  --ek4: #44AA66;
+  --ek5: #55BB77;
+  --ek6: #66CC88;
+  --ek7: #77DD99;
+  --ek8: #88EEAA;
+  --ek9: #99FFAA;
+  --zk0: #BB44AA;
+  --zk1: #BB55BB;
+  --zk2: #CC66CC;
+  --zk3: #CC77DD;
+  --zk4: #DD88DD;
+  --zk5: #DD99EE;
+  --zk6: #EEAAEE;
+  --zk7: #EEBBFF;
+  --zk8: #FFCCFF;
+  --zk9: #FFDDFF;
+  --pk0: #FF4488;
+  --pk1: #EE4499;
+  --pk2: #DD44AA;
+  --pk3: #CC44BB;
+  --pk4: #BB44CC;
+  --pk5: #AA44DD;
+  --pk6: #9944EE;
+  --pk7: #8844FF;
+  --pk8: #7755FF;
+  --pk9: #6655FF;
+  --cy1: #FF5599;
+  --c09: #FF4488;
+  --c01: #EE3377;
+  --cc1: #EE2266;
+  --cx1: #DD1155;
+  --cz1: #DD0044;
+  --cy2: #55EE77;
+  --c10: #44DD66;
+  --c02: #33CC55;
+  --cc2: #22BB44;
+  --cx2: #11AA33;
+  --cz2: #009922;
+  --cy3: #CCEE44;
+  --c11: #BBDD33;
+  --c03: #AACC22;
+  --cc3: #99BB11;
+  --cx3: #88AA00;
+  --cz3: #779900;
+  --cy4: #44DDFF;
+  --c12: #44BBEE;
+  --c04: #4433DD;
+  --cc4: #4422CC;
+  --cx4: #4411BB;
+  --cz4: #4400AA;
+  --cy5: #CC55BB;
+  --c13: #AA44BB;
+  --c05: #7733BB;
+  --cc5: #6622BB;
+  --cx5: #5511AA;
+  --cz5: #5500AA;
+  --cy6: #55FFDD;
+  --c14: #44EECC;
+  --c06: #33DDBB;
+  --cc6: #22CCAA;
+  --cx6: #11BB99;
+  --cz6: #00AA88;
+  --cy7: #CCBBEE;
+  --c15: #BBAAEE;
+  --c07: #AA99EE;
+  --cc7: #9988DD;
+  --cx7: #8877DD;
+  --cz7: #7766DD;
+  /* DO NOT REMOVE ABOVE COLORS */
+
+  --bg: var(--sk2);
+  --fg: #ffffff;
+  --accent: #646cff;
+  --radius: 24px;
+  --padding: 1rem;
+  --control-bg: rgba(255, 255, 255, 0.1);
+  --gap: 1rem;
+  --input-height: 2rem;
+  --stroke-width: 2px;
+  --opacity-hover: 0.8;
+  --opacity-disabled: 0.5;
+  --font-size: 1rem;
+  --font-size-sm: 0.9rem;
+  --font-size-lg: 1.2rem;
+  --transition: 0.2s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, sans-serif;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: var(--padding);
+}
+
+/* Layout */
+.grid { display: grid; gap: var(--gap) }
+.flex { display: flex; gap: var(--gap) }
+.center { display: grid; place-items: center }
+
+/* App */
+#app {
+  max-width: 100vw;
+  max-height: 100vh;
+  aspect-ratio: 16/9;
+  grid-template-columns: 1fr 300px;
+}
+
+/* Preview */
+.preview {
+  aspect-ratio: 1;
+  border-radius: var(--radius);
+  padding: var(--padding);
+  position: relative;
+  overflow: hidden;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  padding: calc(var(--padding) * 2);
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  transition: border-radius var(--transition);
+}
+
+.svg-preview {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+
+.svg-preview svg {
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  width: auto;
+  height: auto;
+  max-width: 80%;
+  max-height: 80%;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: var(--opacity-disabled);
+  font-size: var(--font-size-lg);
+  pointer-events: none;
+}
+
+/* Controls */
+.controls {
+  background: var(--control-bg);
+  border-radius: var(--radius);
+  padding: var(--padding);
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+}
+
+.control-group {
+  grid-template-rows: auto auto auto;
+  gap: 0.5rem;
+}
+
+/* Inputs */
+input[type="file"] { display: none }
+
+input[type="color"] {
+  width: 100%;
+  height: var(--input-height);
+  border-radius: var(--radius);
+  cursor: pointer;
+  padding: 0;
+  outline: var(--stroke-width) solid var(--control-bg);
+}
+
+/* Buttons */
+button {
+  background: var(--accent);
+  color: var(--fg);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: var(--font-size);
+  transition: opacity var(--transition);
+  white-space: nowrap;
+  outline: var(--stroke-width) solid var(--control-bg);
+}
+
+button:hover { opacity: var(--opacity-hover) }
+
+/* Utility Classes */
+.placeholder {
+  opacity: 0.5;
+  font-size: 1.2rem;
+}
+
+/* SVG */
+svg {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
